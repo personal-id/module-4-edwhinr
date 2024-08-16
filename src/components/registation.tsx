@@ -29,15 +29,15 @@ const Registration: React.FunctionComponent = () => {
     });
 
     const validationSchema = Yup.object({
-        fullName: Yup.string().required(),
+        fullName: Yup.string().required('full name is required'),
         email: Yup.string().email('Invalid email').required(),
-        dateOfBirth: Yup.date().required('Required'),
-        address: Yup.string().required('Required'),
-        city: Yup.string().required('Required'),
-        state: Yup.string().required('Required'),
-        zipCode: Yup.number().required('Required'),
-        userName: Yup.string().required('Required'),
-        password: Yup.string().required('Required'),
+        dateOfBirth: Yup.date().required('date is required'),
+        address: Yup.string().required('addres is required'),
+        city: Yup.string().required('city is required'),
+        state: Yup.string().required('state is required'),
+        zipCode: Yup.number().required('zip code is required'),
+        userName: Yup.string().required('username is required'),
+        password: Yup.string().required('password is required'),
     });
 
     const handleSubmit = (values: Values, { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }) => {
